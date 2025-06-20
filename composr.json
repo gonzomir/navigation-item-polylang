@@ -1,0 +1,20 @@
+{
+  "name": "gonzomir/navigation-item-polylang",
+  "description": "Adds Polylang language switcher support to the WordPress Navigation block.",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Milen Petrinski - Gonzo",
+      "email": "gonzo@greatgonzo.net",
+      "homepage": "https://greatgonzo.net"
+    }
+  ],
+  "require": {
+    "php": ">=7.4"
+  },
+  "support": {
+    "issues": "https://github.com/gonzomir/navigation-item-polylang/issues",
+    "source": "https://github.com/gonzomir/navigation-item-polylang"
+  }
+}
