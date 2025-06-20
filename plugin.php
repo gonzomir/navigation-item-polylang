@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Navigation Menu Item For Polylang
  * Plugin URI: https://github.com/gonzomir/navigation-item-polylang
- * Description: Adds Polylang language switcher support to WordPress navigation menus using the block editor.
+ * Description: Adds Polylang language switcher support to the navigation block.
  * Version: 0.0.1
  * Author: Milen Petrinski - Gonzo
  * Author URI: https://greatgonzo.net

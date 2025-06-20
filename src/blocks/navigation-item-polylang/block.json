@@ -6,13 +6,17 @@
 	"title": "Polylang Language Switcher",
 	"category": "widgets",
 	"icon": "translation",
-	"description": "Polylang language swucther menu item for the navigation block.",
+	"description": "Polylang language swutcher menu item for the navigation block.",
 	"example": {},
+	"parent": [
+		"core/navigation"
+	],
 	"supports": {
 		"html": false
 	},
 	"textdomain": "navigation-item-polylang",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"render": "file:./index.php"
 }

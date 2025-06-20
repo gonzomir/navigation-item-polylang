@@ -11,6 +11,8 @@ define( __NAMESPACE__ . '\\BLOCKS_PATH', dirname( __DIR__ ) . '/build' );
  */
 function bootstrap() {
 	add_action( 'init', __NAMESPACE__ . '\\block_init' );
+	add_action( 'enqueue_block_editor_assets', __NAMESPACE__ . '\\block_editor_assets' );
+	add_filter( 'block_core_navigation_listable_blocks', __NAMESPACE__ . '\\wrap_language_switcher' );
 }
 
 
@@ -55,4 +57,40 @@ function block_init() {
 	foreach ( array_keys( $manifest_data ) as $block_type ) {
 		register_block_type( BLOCKS_PATH . '/' . $block_type );
 	}
+}
+
+/**
+ * Enqueue block editor assets.
+ *
+ * Enqueues the block editor script for extending the navigation block.
+ *
+ * @return void
+ */
+function block_editor_assets() {
+	$editor_meta = require BLOCKS_PATH . '/editor.asset.php';
+
+	wp_enqueue_script(
+		'navigation-item-polylang-block-editor',
+		plugins_url( 'build/editor.js', __DIR__ ),
+		$editor_meta['dependencies'],
+		$editor_meta['version']
+	);
+
+	wp_enqueue_style(
+		'navigation-item-polylang-block-editor-style',
+		plugins_url( 'build/editor.css', __DIR__ ),
+		[],
+		$editor_meta['version']
+	);
+}
+
+/**
+ * Wraps the language switcher block in a list element.
+ *
+ * @param array $blocks The list of blocks that can will be wrapped with list items.
+ * @return array The modified list of blocks.
+ */
+function wrap_language_switcher( $blocks ) {
+	$blocks[] = 'gonzomir/polylang-language-switcher';
+	return $blocks;
 }
