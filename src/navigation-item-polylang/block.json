@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "gonzomir/polylang-language-switcher",
+	"version": "0.0.1",
+	"title": "Polylang Language Switcher",
+	"category": "widgets",
+	"icon": "translation",
+	"description": "Polylang language swucther menu item for the navigation block.",
+	"example": {},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "navigation-item-polylang",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
