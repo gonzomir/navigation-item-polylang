@@ -6,7 +6,13 @@ addFilter(
 	( settings, name ) => {
 		if ( name === 'core/navigation' ) {
 			const { allowedBlocks = [] } = settings;
-			return { ...settings, allowedBlocks: [ ...allowedBlocks, 'gonzomir/polylang-language-switcher' ] };
+			return {
+				...settings,
+				allowedBlocks: [
+					...allowedBlocks,
+					'gonzomir/polylang-language-switcher',
+				],
+			};
 		}
 		return settings;
 	}

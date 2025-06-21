@@ -6,6 +6,6 @@ module.exports = {
 	...defaultConfig,
 	entry: {
 		...getWebpackEntryPoints(),
-		'editor': './src/editor.js',
+		editor: './src/editor.js',
 	},
 };
