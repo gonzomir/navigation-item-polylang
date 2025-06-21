@@ -87,4 +87,4 @@ jobs:
       run: npm install
 
     - name: Run Stylelint
-      run: npx stylelint --config=.stylelintrc.json --allow-empty-input --custom-formatter=node_modules/stylelint-formatter-github-annotate/dist/index.js "**/*.{css,scss}"
+      run: npm run lint:css --custom-formatter=node_modules/stylelint-formatter-github-annotate/dist/index.js
