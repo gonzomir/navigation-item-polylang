@@ -23,6 +23,8 @@ jobs:
         id: generate_zip
         run: |
           zip -r ${GITHUB_REPOSITORY#*/} . -x@.distignore
+          echo "zip_file=${GITHUB_REPOSITORY#*/}.zip" >> $GITHUB_OUTPUT
+        shell: bash
 
       - name: Create Release
         id: create_release
@@ -38,6 +40,6 @@ jobs:
       - name: Upload release artifacts
         uses: Roang-zero1/github-upload-release-artifacts-action@v2
         with:
-          args: "${GITHUB_REPOSITORY#*/}.zip"
+          args: ${{ steps.generate_zip.outputs.zip_file }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
